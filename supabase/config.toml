@@ -1,0 +1,4 @@
+project_id = "mnlcyhyiwciewwvfxjtx"
+
+[functions.export-registrations]
+verify_jwt = false
