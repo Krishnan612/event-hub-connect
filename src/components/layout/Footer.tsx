@@ -56,12 +56,12 @@ export function Footer() {
                 <span>CSE Department, Main Building</span>
               </li>
               <li className="flex items-center gap-2 text-muted-foreground">
-                <Mail className="h-4 w-4 text-primary" />
-                <span>events@csedepartment.edu</span>
+                {/* <Mail className="h-4 w-4 text-primary" />
+                <span>techforce.in</span> */}
               </li>
               <li className="flex items-center gap-2 text-muted-foreground">
-                <Phone className="h-4 w-4 text-primary" />
-                <span>+91 1234 567890</span>
+                {/* <Phone className="h-4 w-4 text-primary" />
+                <span>+91 1234 567890</span> */}
               </li>
             </ul>
           </div>
