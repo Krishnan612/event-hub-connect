@@ -32,29 +32,20 @@ export function RegistrationForm({ event, onSuccess }: RegistrationFormProps) {
   const { toast } = useToast();
   const createRegistration = useCreateRegistration();
 
-  const {
-    register,
-    handleSubmit,
-    setValue,
-<<<<<<< HEAD
-    watch,
-    formState: { errors, isSubmitting },
-  } = useForm<RegistrationFormData>({
-    resolver: zodResolver(registrationSchema),
-    defaultValues: {
-      year_of_study: '',
-    },
-  });
+const {
+  register,
+  handleSubmit,
+  setValue,
+  watch,
+  formState: { errors, isSubmitting },
+} = useForm<RegistrationFormData>({
+  resolver: zodResolver(registrationSchema),
+  defaultValues: {
+    year_of_study: '',
+  },
+});
 
-  const year_of_study = watch('year_of_study');
-
-=======
-    formState: { errors, isSubmitting },
-  } = useForm<RegistrationFormData>({
-    resolver: zodResolver(registrationSchema),
-  });
-
->>>>>>> cfee6e2a4e96418ef3f36fbdb1b36c7232dc7836
+const year_of_study = watch('year_of_study');
   const onSubmit = async (data: RegistrationFormData) => {
     try {
       await createRegistration.mutateAsync({
@@ -168,17 +159,12 @@ export function RegistrationForm({ event, onSuccess }: RegistrationFormProps) {
         </div>
       </div>
 
-      <div className="space-y-2">
-        <Label htmlFor="year_of_study">Year of Study</Label>
-<<<<<<< HEAD
-        <Select value={year_of_study || ''} onValueChange={(value) => setValue('year_of_study', value)}>
-          <SelectTrigger id="year_of_study">
-=======
-        <Select onValueChange={(value) => setValue('year_of_study', value)}>
-          <SelectTrigger>
->>>>>>> cfee6e2a4e96418ef3f36fbdb1b36c7232dc7836
-            <SelectValue placeholder="Select your year" />
-          </SelectTrigger>
+<div className="space-y-2">
+  <Label htmlFor="year_of_study">Year of Study</Label>
+  <Select value={year_of_study || ''} onValueChange={(value) => setValue('year_of_study', value)}>
+    <SelectTrigger id="year_of_study">
+      <SelectValue placeholder="Select your year" />
+    </SelectTrigger>
           <SelectContent>
             <SelectItem value="1st Year">1st Year</SelectItem>
             <SelectItem value="2nd Year">2nd Year</SelectItem>

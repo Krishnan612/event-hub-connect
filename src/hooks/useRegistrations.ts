@@ -31,9 +31,9 @@ export function useCreateRegistration() {
         .single();
       
       if (error) {
-<<<<<<< HEAD
         console.error('Registration error:', error);
         // Handle specific error messages from triggers
+        // We use ?. (optional chaining) to prevent crashes if message is missing
         if (error.message?.includes('Registration is closed')) {
           throw new Error('Registration is currently closed for this event');
         }
@@ -41,30 +41,16 @@ export function useCreateRegistration() {
           throw new Error('The registration deadline has passed');
         }
         if (error.message?.includes('maximum participants')) {
-=======
-        // Handle specific error messages from triggers
-        if (error.message.includes('Registration is closed')) {
-          throw new Error('Registration is currently closed for this event');
-        }
-        if (error.message.includes('deadline has passed')) {
-          throw new Error('The registration deadline has passed');
-        }
-        if (error.message.includes('maximum participants')) {
->>>>>>> cfee6e2a4e96418ef3f36fbdb1b36c7232dc7836
           throw new Error('This event has reached its maximum capacity');
         }
         if (error.code === '23505') {
           throw new Error('You have already registered for this event');
         }
-<<<<<<< HEAD
         // Log the actual error for debugging
         if (error.message) {
           throw new Error(error.message);
         }
         throw new Error('Failed to register for this event. Please try again.');
-=======
-        throw error;
->>>>>>> cfee6e2a4e96418ef3f36fbdb1b36c7232dc7836
       }
       return data;
     },

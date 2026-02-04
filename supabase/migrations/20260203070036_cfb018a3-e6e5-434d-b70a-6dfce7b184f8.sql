@@ -108,13 +108,10 @@ CREATE POLICY "Anyone can register for events"
   ON public.registrations FOR INSERT
   WITH CHECK (true);
 
-<<<<<<< HEAD
 CREATE POLICY "Anyone can view registrations by email"
   ON public.registrations FOR SELECT
   USING (true);
 
-=======
->>>>>>> cfee6e2a4e96418ef3f36fbdb1b36c7232dc7836
 CREATE POLICY "Admins can view all registrations"
   ON public.registrations FOR SELECT
   USING (public.is_admin(auth.uid()));
